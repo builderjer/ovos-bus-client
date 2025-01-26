@@ -72,7 +72,7 @@ class EventScheduler(Thread):
         self.event_lock = Lock()
         
         # to check if its our first connection to the internet via clock_skew
-        self._last_sync = time.time()
+        self._last_sync = time.localtime()
         self._dropped_events = 0
         self._past_date = datetime.datetime(day=1, month=12, year=2024)
         # Convert Unix timestamp to human-readable datetime
